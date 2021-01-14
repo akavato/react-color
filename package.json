@@ -1,6 +1,6 @@
 {
   "name": "mp-react-color",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react-color fork with added classes",
   "main": "lib/index.js",
   "module": "es/index.js",

@@ -4,5 +4,9 @@
     "stage-0",
     "react"
   ],
-  "plugins": ["transform-react-remove-prop-types"]
+  "plugins": [
+    ["transform-react-remove-prop-types", {
+      "removeImport": true
+    }]
+  ]
 }
