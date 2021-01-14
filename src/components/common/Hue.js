@@ -75,7 +75,7 @@ export class Hue extends (PureComponent || Component) {
           onTouchMove={ this.handleChange }
           onTouchStart={ this.handleChange }
         >
-          <style>{ `
+          <style>{`
             .hue-horizontal {
               background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
                 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
@@ -89,7 +89,7 @@ export class Hue extends (PureComponent || Component) {
               background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
                 #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
             }
-          ` }</style>
+          `}</style>
           <div style={ styles.pointer }>
             { this.props.pointer ? (
               <this.props.pointer { ...this.props } />

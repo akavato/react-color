@@ -23,6 +23,7 @@ exports[`Chrome renders correctly 1`] = `
   }
 >
   <div
+    className="color-select-field"
     style={
       Object {
         "MozBorderRadius": "2px 2px 0 0",
@@ -119,6 +120,7 @@ exports[`Chrome renders correctly 1`] = `
           }
         >
           <div
+            className="pointer-circle"
             style={
               Object {
                 "MozBorderRadius": "6px",
@@ -146,6 +148,7 @@ exports[`Chrome renders correctly 1`] = `
     </div>
   </div>
   <div
+    className="sliders-wrapper"
     style={
       Object {
         "padding": "16px 16px 12px",
@@ -367,6 +370,7 @@ exports[`Chrome renders correctly 1`] = `
             }
           >
             <div
+              className="alpha-track-left"
               style={
                 Object {
                   "MozBorderRadius": undefined,
@@ -407,6 +411,7 @@ exports[`Chrome renders correctly 1`] = `
               />
             </div>
             <div
+              className="alpha-track-right"
               style={
                 Object {
                   "MozBorderRadius": undefined,
@@ -430,6 +435,7 @@ exports[`Chrome renders correctly 1`] = `
               }
             />
             <div
+              className="alpha-horizontal"
               onMouseDown={[Function]}
               onTouchMove={[Function]}
               onTouchStart={[Function]}
@@ -480,7 +486,7 @@ exports[`Chrome renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="flexbox-fix"
+      className="flexbox-fix color-mode-selector"
       style={
         Object {
           "display": "flex",
@@ -569,6 +575,10 @@ exports[`Chrome renders correctly 1`] = `
       <div
         style={
           Object {
+            "WebkitJustifyContent": "flex-end",
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "flex-end",
             "position": "relative",
             "textAlign": "right",
             "width": "32px",
@@ -580,8 +590,6 @@ exports[`Chrome renders correctly 1`] = `
           style={
             Object {
               "cursor": "pointer",
-              "marginRight": "-4px",
-              "marginTop": "12px",
               "position": "relative",
             }
           }
@@ -618,7 +626,7 @@ exports[`Chrome renders correctly 1`] = `
 
 exports[`ChromeFields renders correctly 1`] = `
 <div
-  className="flexbox-fix"
+  className="flexbox-fix color-mode-selector"
   style={
     Object {
       "display": "flex",
@@ -707,6 +715,10 @@ exports[`ChromeFields renders correctly 1`] = `
   <div
     style={
       Object {
+        "WebkitJustifyContent": "flex-end",
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "flex-end",
         "position": "relative",
         "textAlign": "right",
         "width": "32px",
@@ -718,8 +730,6 @@ exports[`ChromeFields renders correctly 1`] = `
       style={
         Object {
           "cursor": "pointer",
-          "marginRight": "-4px",
-          "marginTop": "12px",
           "position": "relative",
         }
       }
@@ -781,6 +791,7 @@ exports[`ChromePointer renders correctly 1`] = `
 
 exports[`ChromePointerCircle renders correctly 1`] = `
 <div
+  className="pointer-circle"
   style={
     Object {
       "MozBorderRadius": "6px",

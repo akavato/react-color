@@ -18,6 +18,7 @@ exports[`Alpha renders correctly 1`] = `
   }
 >
   <div
+    className="alpha-track-left"
     style={
       Object {
         "MozBorderRadius": undefined,
@@ -58,6 +59,7 @@ exports[`Alpha renders correctly 1`] = `
     />
   </div>
   <div
+    className="alpha-track-right"
     style={
       Object {
         "MozBorderRadius": undefined,
@@ -81,6 +83,7 @@ exports[`Alpha renders correctly 1`] = `
     }
   />
   <div
+    className="alpha-horizontal"
     onMouseDown={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}

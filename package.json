@@ -1,6 +1,6 @@
 {
   "name": "mp-react-color",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React-color fork with added classes",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -45,10 +45,10 @@
     "@icons/material": "^0.2.4",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
-    "material-colors": "^1.2.1",
-    "prop-types": "^15.5.10",
-    "reactcss": "^1.2.0",
-    "tinycolor2": "^1.4.1"
+    "material-colors": "^1.2.6",
+    "prop-types": "^15.7.2",
+    "reactcss": "^1.2.3",
+    "tinycolor2": "^1.4.2"
   },
   "peerDependencies": {
     "react": "*"
