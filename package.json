@@ -1,7 +1,7 @@
 {
   "name": "mp-react-color",
-  "version": "1.0.1",
-  "description": "React-color fork with added classes",
+  "version": "1.0.2",
+  "description": "react-color fork with added classes",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
@@ -42,9 +42,8 @@
     "popup"
   ],
   "dependencies": {
-    "lodash": "^4.17.15",
-    "lodash-es": "^4.17.15",
-    "material-colors": "^1.2.6",
+    "lodash": "^4.17.20",
+    "lodash-es": "^4.17.20",
     "prop-types": "^15.7.2",
     "reactcss": "^1.2.3",
     "tinycolor2": "^1.4.2"
