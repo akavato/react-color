@@ -21,6 +21,7 @@ const esBabelRC = {
         'replacement': 'lodash-es',
       },
     ],
+    ['transform-react-remove-prop-types'],
   ],
 }
 
