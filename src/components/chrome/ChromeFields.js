@@ -124,10 +124,11 @@ export class ChromeFields extends React.Component {
           width: '32px',
           textAlign: 'right',
           position: 'relative',
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
         },
         icon: {
-          marginRight: '-4px',
-          marginTop: '12px',
           cursor: 'pointer',
           position: 'relative',
         },
@@ -261,7 +262,7 @@ export class ChromeFields extends React.Component {
     }
 
     return (
-      <div style={ styles.wrap } className="flexbox-fix">
+      <div style={ styles.wrap } className="flexbox-fix color-mode-selector">
         { fields }
         <div style={ styles.toggle }>
           <div style={ styles.icon } onClick={ this.toggleViews } ref={ (icon) => this.icon = icon }>

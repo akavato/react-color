@@ -93,7 +93,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
 
   return (
     <div style={ styles.picker } className={ `chrome-picker ${ className }` }>
-      <div style={ styles.saturation }>
+      <div className="color-select-field" style={ styles.saturation }>
         <Saturation
           style={ styles.Saturation }
           hsl={ hsl }
@@ -102,7 +102,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
           onChange={ onChange }
         />
       </div>
-      <div style={ styles.body }>
+      <div className="sliders-wrapper" style={ styles.body }>
         <div style={ styles.controls } className="flexbox-fix">
           <div style={ styles.color }>
             <div style={ styles.swatch }>

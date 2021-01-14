@@ -30,7 +30,7 @@ export class Alpha extends (PureComponent || Component) {
   }
 
   render() {
-    const rgb = this.props.rgb
+    const { direction = 'horizontal', rgb } = this.props
     const styles = reactCSS({
       'default': {
         alpha: {
@@ -82,19 +82,20 @@ export class Alpha extends (PureComponent || Component) {
         ...this.props.style,
       },
     }, {
-      vertical: this.props.direction === 'vertical',
+      vertical: direction === 'vertical',
       overwrite: true,
     })
 
     return (
       <div style={ styles.alpha }>
-        <div style={ styles.checkboard }>
+        <div className="alpha-track-left" style={ styles.checkboard }>
           <Checkboard renderers={ this.props.renderers } />
         </div>
-        <div style={ styles.gradient } />
+        <div className="alpha-track-right" style={ styles.gradient } />
         <div
+          className={ `alpha-${ direction }` }
           style={ styles.container }
-          ref={ container => this.container = container }
+          ref={ (container) => this.container = container }
           onMouseDown={ this.handleMouseDown }
           onTouchMove={ this.handleChange }
           onTouchStart={ this.handleChange }

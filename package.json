@@ -1,17 +1,16 @@
 {
-  "name": "react-color",
-  "version": "2.19.3",
-  "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
+  "name": "mp-react-color",
+  "version": "1.0.0",
+  "description": "React-color fork with added classes",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/casesandberg/react-color.git"
+    "url": "git+https://github.com/akavato/react-color.git"
   },
-  "author": "case <case@casesandberg.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/casesandberg/react-color/issues"
+    "url": "https://github.com/akavato/react-color/issues"
   },
   "scripts": {
     "test": "npm run jest && npm run eslint",
@@ -30,7 +29,6 @@
     "chromatic": "chromatic --project-token=9z2kaxsuz"
   },
   "sideEffects": false,
-  "homepage": "http://casesandberg.github.io/react-color/",
   "keywords": [
     "react",
     "color picker",

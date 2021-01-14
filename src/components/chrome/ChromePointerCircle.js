@@ -15,7 +15,7 @@ export const ChromePointerCircle = () => {
   })
 
   return (
-    <div style={ styles.picker } />
+    <div className="pointer-circle" style={ styles.picker } />
   )
 }
 
