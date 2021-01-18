@@ -8,7 +8,7 @@ import ChromeFields from './ChromeFields'
 import ChromePointer from './ChromePointer'
 import ChromePointerCircle from './ChromePointerCircle'
 import ChromeEyedropper from './ChromeEyedropper'
-import testImage from './TestImage.jpg'
+// import testImage from './TestImage.jpg'
 
 export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
   styles: passedStyles = {}, className = '', defaultView }) => {

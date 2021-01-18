@@ -1,4 +1,4 @@
-# [Based on React Color](http://casesandberg.github.io/react-color/)
+# React Color + eyedropper, based on [react-color](http://casesandberg.github.io/react-color/)
 
 [![Npm Version][npm-version-image]][npm-version-url]
 [![License][license-image]][license-url]
@@ -21,12 +21,12 @@ npm install mp-react-color --save
 
 ```js
 import React from 'react'
-import { SketchPicker } from 'mp-react-color'
+import { ChromePicker } from 'mp-react-color'
 
 class Component extends React.Component {
 
   render() {
-    return <SketchPicker />
+    return <ChromePicker />
   }
 }
 ```

@@ -1,6 +1,6 @@
 {
   "name": "mp-react-color",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "react-color fork with eyedropper",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -39,7 +39,8 @@
     "chrome",
     "photoshop",
     "material design",
-    "popup"
+    "popup",
+    "eyedropper"
   ],
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
