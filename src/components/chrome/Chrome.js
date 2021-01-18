@@ -7,6 +7,8 @@ import { ColorWrap, Saturation, Hue, Alpha, Checkboard } from '../common'
 import ChromeFields from './ChromeFields'
 import ChromePointer from './ChromePointer'
 import ChromePointerCircle from './ChromePointerCircle'
+import ChromeEyedropper from './ChromeEyedropper'
+import testImage from './TestImage.jpg'
 
 export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
   styles: passedStyles = {}, className = '', defaultView }) => {
@@ -18,7 +20,6 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
         borderRadius: '2px',
         boxShadow: '0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)',
         boxSizing: 'initial',
-        fontFamily: 'Menlo',
       },
       saturation: {
         width: '100%',
@@ -37,10 +38,12 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
         display: 'flex',
       },
       color: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         width: '32px',
       },
       swatch: {
-        marginTop: '6px',
         width: '16px',
         height: '16px',
         borderRadius: '8px',
@@ -50,7 +53,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
       active: {
         absolute: '0px 0px 0px 0px',
         borderRadius: '8px',
-        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
+        // boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
         background: `rgba(${ rgb.r }, ${ rgb.g }, ${ rgb.b }, ${ rgb.a })`,
         zIndex: '2',
       },
@@ -92,7 +95,9 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
   }, passedStyles), { disableAlpha })
 
   return (
+
     <div style={ styles.picker } className={ `chrome-picker ${ className }` }>
+      {/* <img src={ testImage } alt="" /> */}
       <div className="color-select-field" style={ styles.saturation }>
         <Saturation
           style={ styles.Saturation }
@@ -104,6 +109,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
       </div>
       <div className="sliders-wrapper" style={ styles.body }>
         <div style={ styles.controls } className="flexbox-fix">
+          <ChromeEyedropper onChange={ onChange } />
           <div style={ styles.color }>
             <div style={ styles.swatch }>
               <div style={ styles.active } />
@@ -149,9 +155,9 @@ Chrome.propTypes = {
   disableAlpha: PropTypes.bool,
   styles: PropTypes.object,
   defaultView: PropTypes.oneOf([
-    "hex",
-    "rgb",
-    "hsl",
+    'hex',
+    'rgb',
+    'hsl',
   ]),
 }
 
