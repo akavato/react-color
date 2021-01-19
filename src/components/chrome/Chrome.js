@@ -11,7 +11,7 @@ import ChromeEyedropper from './ChromeEyedropper'
 // import testImage from './TestImage.jpg'
 
 export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
-  styles: passedStyles = {}, className = '', defaultView }) => {
+  styles: passedStyles = {}, className = '', defaultView, rootElement }) => {
   const styles = reactCSS(merge({
     'default': {
       picker: {
@@ -53,7 +53,6 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
       active: {
         absolute: '0px 0px 0px 0px',
         borderRadius: '8px',
-        // boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
         background: `rgba(${ rgb.r }, ${ rgb.g }, ${ rgb.b }, ${ rgb.a })`,
         zIndex: '2',
       },
@@ -95,7 +94,6 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
   }, passedStyles), { disableAlpha })
 
   return (
-
     <div style={ styles.picker } className={ `chrome-picker ${ className }` }>
       {/* <img src={ testImage } alt="" /> */}
       <div className="color-select-field" style={ styles.saturation }>
@@ -109,7 +107,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
       </div>
       <div className="sliders-wrapper" style={ styles.body }>
         <div style={ styles.controls } className="flexbox-fix">
-          <ChromeEyedropper onChange={ onChange } />
+          <ChromeEyedropper rootElement={ rootElement } onChange={ onChange } />
           <div style={ styles.color }>
             <div style={ styles.swatch }>
               <div style={ styles.active } />

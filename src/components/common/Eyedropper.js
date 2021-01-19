@@ -10,7 +10,10 @@ class EyeDropper extends (PureComponent || Component) {
   }
 
   removeEventListener = () => {
-    document.removeEventListener('click', this.eyeDropper)
+    const tempCanvas = document.querySelector('#temp-canvas')
+    if (tempCanvas) {
+      tempCanvas.removeEventListener('click', this.eyeDropper, false)
+    }
   }
 
   getCanvasPixelColor = (ctx, x, y) => {
@@ -32,6 +35,17 @@ class EyeDropper extends (PureComponent || Component) {
   }
 
   imageToCanvas = (eventTarget) => {
+    // Usage example
+    // if (target.nodeName.toLowerCase() === 'img') {
+    //   const { offsetX, offsetY } = e
+    //   this.imageToCanvas(target).then((canvas) => {
+    //     const { r, g, b } = this.getCanvasPixelColor(canvas, offsetX, offsetY)
+    //     this.handleChange({ r, g, b })
+    //   })
+    //   this.removeEventListener()
+    //   document.body.style.cursor = 'default'
+    //   return
+    // }
     if (eventTarget.nodeName !== 'IMG') {
       return null
     }
@@ -40,7 +54,6 @@ class EyeDropper extends (PureComponent || Component) {
     canvasElement.height = eventTarget.height
     const context = canvasElement.getContext('2d')
 
-    // Allows for cross origin images
     const downloadedImg = new Image
     downloadedImg.src = eventTarget.src
     downloadedImg.crossOrigin = 'Anonymous'
@@ -55,33 +68,33 @@ class EyeDropper extends (PureComponent || Component) {
   }
 
   eyeDropper = (e) => {
-    const { target } = e
-
-    // Convert image to canvas because html2canvas can't
-    if (target.nodeName.toLowerCase() === 'img') {
-      const { offsetX, offsetY } = e
-      this.imageToCanvas(target).then((canvas) => {
-        const { r, g, b } = this.getCanvasPixelColor(canvas, offsetX, offsetY)
-        this.handleChange({ r, g, b })
-      })
-      this.removeEventListener()
-      document.body.style.cursor = 'default'
-      return
-    }
-
-    html2canvas(target, { logging: false }).then((canvas) => {
-      const { layerX, layerY } = e
-      const { r, g, b } = this.getCanvasPixelColor(canvas, layerX, layerY)
-      this.handleChange({ r, g, b })
-      this.removeEventListener()
-      document.body.style.cursor = 'default'
-    })
+    e.stopPropagation()
+    const { clientX, clientY } = e
+    const realCanvas = document.querySelector('#temp-canvas')
+    const { r, g, b } = this.getCanvasPixelColor(realCanvas, clientX, clientY)
+    this.handleChange({ r, g, b })
+    this.removeEventListener()
+    realCanvas.remove()
   }
 
   handleEyeDropperClick = (event) => {
     event.stopPropagation()
-    document.body.style.cursor = 'crosshair'
-    document.addEventListener('click', this.eyeDropper)
+    const rootElement = this.props.rootElement || document.querySelector('body')
+
+    html2canvas(rootElement, { logging: false }).then((canvas) => {
+      canvas.id = 'temp-canvas'
+      rootElement.insertBefore(canvas, rootElement.firstChild)
+
+      const realCanvas = document.querySelector('#temp-canvas')
+      realCanvas.style.position = 'absolute'
+      realCanvas.style.top = 0
+      realCanvas.style.right = 0
+      realCanvas.style.bottom = 0
+      realCanvas.style.left = 0
+      realCanvas.style.zIndex = 99999
+      realCanvas.style.cursor = 'crosshair'
+      realCanvas.addEventListener('click', this.eyeDropper, false)
+    })
   }
 
   handleChange = (colorObj) => {
