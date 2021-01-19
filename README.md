@@ -26,7 +26,7 @@ import { ChromePicker } from 'mp-react-color'
 class Component extends React.Component {
 
   render() {
-    return <ChromePicker rootElement={document.querySelector('#react-app')} />
+    return <ChromePicker useScreenCaptureAPI rootElement={document.querySelector('#react-app')} />
   }
 }
 ```

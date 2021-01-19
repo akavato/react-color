@@ -77,24 +77,53 @@ class EyeDropper extends (PureComponent || Component) {
     realCanvas.remove()
   }
 
-  handleEyeDropperClick = (event) => {
+  handleEyeDropperClick = async (event) => {
     event.stopPropagation()
     const rootElement = this.props.rootElement || document.querySelector('body')
+    let canvas
 
-    html2canvas(rootElement, { logging: false }).then((canvas) => {
-      canvas.id = 'temp-canvas'
-      rootElement.insertBefore(canvas, rootElement.firstChild)
+    if (this.props.useScreenCaptureAPI) {
+      canvas = await this.screenCapture()
+    } else {
+      canvas = await html2canvas(rootElement, { logging: false })
+    }
+    canvas.id = 'temp-canvas'
+    rootElement.insertBefore(canvas, rootElement.firstChild)
 
-      const realCanvas = document.querySelector('#temp-canvas')
-      realCanvas.style.position = 'absolute'
-      realCanvas.style.top = 0
-      realCanvas.style.right = 0
-      realCanvas.style.bottom = 0
-      realCanvas.style.left = 0
-      realCanvas.style.zIndex = 99999
-      realCanvas.style.cursor = 'crosshair'
-      realCanvas.addEventListener('click', this.eyeDropper, false)
+    const realCanvas = document.querySelector('#temp-canvas')
+    realCanvas.style.position = 'absolute'
+    realCanvas.style.top = 0
+    realCanvas.style.right = 0
+    realCanvas.style.bottom = 0
+    realCanvas.style.left = 0
+    realCanvas.style.zIndex = 99999
+    realCanvas.style.cursor = 'crosshair'
+    realCanvas.addEventListener('click', this.eyeDropper, false)
+  }
+
+  screenCapture = async () => {
+    const video = document.createElement('video')
+
+    const mediaStream = await navigator.mediaDevices.getDisplayMedia({ audio: false, video: { width: screen.width, height: screen.height, frameRate: 1, cursor: 'never' } })
+
+    const result = await new Promise((resolve, reject) => {
+      video.onloadedmetadata = () => {
+        video.play()
+        video.pause()
+
+        const canvas = document.createElement('canvas')
+        canvas.width = video.videoWidth
+        canvas.height = video.videoHeight
+        const context = canvas.getContext('2d')
+        context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight)
+        resolve(canvas)
+      }
+      video.srcObject = mediaStream
     })
+
+    mediaStream.getTracks().forEach((track) => track.stop())
+
+    return result
   }
 
   handleChange = (colorObj) => {

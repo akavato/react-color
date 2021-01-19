@@ -26,7 +26,7 @@ export const ChromeEyedropper = (props) => {
   return (
     <div className="eyedropper-wrap" style={ styles.wrap }>
       <ColorizeIcon style={ styles.icon } />
-      <Eyedropper rootElement={ props.rootElement } onChange={ props.onChange } />
+      <Eyedropper rootElement={ props.rootElement } useScreenCaptureAPI={ props.useScreenCaptureAPI } onChange={ props.onChange } />
     </div>
   )
 }

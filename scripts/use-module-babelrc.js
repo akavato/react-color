@@ -14,6 +14,9 @@ const esBabelRC = {
     'react',
   ],
   plugins: [
+    ['transform-runtime', {
+      'regenerator': true,
+    }],
     [
       'transform-rename-import',
       {
