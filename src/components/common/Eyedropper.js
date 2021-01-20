@@ -84,6 +84,9 @@ class EyeDropper extends (PureComponent || Component) {
 
     if (this.props.useScreenCaptureAPI) {
       canvas = await this.screenCapture()
+      if (typeof canvas === 'string') {
+        canvas = await html2canvas(rootElement, { logging: false })
+      }
     } else {
       canvas = await html2canvas(rootElement, { logging: false })
     }
@@ -91,7 +94,7 @@ class EyeDropper extends (PureComponent || Component) {
     rootElement.insertBefore(canvas, rootElement.firstChild)
 
     const realCanvas = document.querySelector('#temp-canvas')
-    realCanvas.style.position = 'absolute'
+    realCanvas.style.position = 'fixed'
     realCanvas.style.top = 0
     realCanvas.style.right = 0
     realCanvas.style.bottom = 0
@@ -103,8 +106,12 @@ class EyeDropper extends (PureComponent || Component) {
 
   screenCapture = async () => {
     const video = document.createElement('video')
-
-    const mediaStream = await navigator.mediaDevices.getDisplayMedia({ audio: false, video: { width: screen.width, height: screen.height, frameRate: 1, cursor: 'never' } })
+    let mediaStream
+    try {
+      mediaStream = await navigator.mediaDevices.getDisplayMedia({ audio: false, video: { width: screen.width, height: screen.height, frameRate: 1, cursor: 'never' } })
+    } catch (error) {
+      return error.message
+    }
 
     const result = await new Promise((resolve, reject) => {
       video.onloadedmetadata = () => {

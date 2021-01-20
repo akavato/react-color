@@ -30,6 +30,8 @@ class Component extends React.Component {
   }
 }
 ```
+Added props to ChromePicker: `disableEyedropper` `useScreenCaptureAPI` `rootElement`
+
 You can import `AlphaPicker` `BlockPicker` `ChromePicker` `CirclePicker` `CompactPicker` `GithubPicker` `HuePicker` `MaterialPicker` `PhotoshopPicker` `SketchPicker` `SliderPicker` `SwatchesPicker` `TwitterPicker` respectively.
 
 

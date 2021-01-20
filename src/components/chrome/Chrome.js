@@ -11,7 +11,7 @@ import ChromeEyedropper from './ChromeEyedropper'
 // import testImage from './TestImage.jpg'
 
 export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
-  styles: passedStyles = {}, className = '', defaultView, rootElement, useScreenCaptureAPI }) => {
+  styles: passedStyles = {}, className = '', defaultView, disableEyedropper, rootElement, useScreenCaptureAPI }) => {
   const styles = reactCSS(merge({
     'default': {
       picker: {
@@ -107,7 +107,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
       </div>
       <div className="sliders-wrapper" style={ styles.body }>
         <div style={ styles.controls } className="flexbox-fix">
-          <ChromeEyedropper rootElement={ rootElement } useScreenCaptureAPI={ useScreenCaptureAPI } onChange={ onChange } />
+          {disableEyedropper ? null : <ChromeEyedropper rootElement={ rootElement } useScreenCaptureAPI={ useScreenCaptureAPI } onChange={ onChange } />}
           <div style={ styles.color }>
             <div style={ styles.swatch }>
               <div style={ styles.active } />
