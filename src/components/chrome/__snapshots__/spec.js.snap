@@ -15,7 +15,6 @@ exports[`Chrome renders correctly 1`] = `
       "borderRadius": "2px",
       "boxShadow": "0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)",
       "boxSizing": "initial",
-      "fontFamily": "Menlo",
       "msBorderRadius": "2px",
       "msBoxShadow": "0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)",
       "width": 225,
@@ -124,19 +123,16 @@ exports[`Chrome renders correctly 1`] = `
             style={
               Object {
                 "MozBorderRadius": "6px",
-                "MozBoxShadow": "inset 0 0 0 1px #fff",
                 "MozTransform": "translate(-6px, -6px)",
                 "OBorderRadius": "6px",
-                "OBoxShadow": "inset 0 0 0 1px #fff",
                 "OTransform": "translate(-6px, -6px)",
                 "WebkitBorderRadius": "6px",
-                "WebkitBoxShadow": "inset 0 0 0 1px #fff",
                 "WebkitTransform": "translate(-6px, -6px)",
+                "backgroundColor": "transparent",
+                "border": "1px solid #fff",
                 "borderRadius": "6px",
-                "boxShadow": "inset 0 0 0 1px #fff",
                 "height": "12px",
                 "msBorderRadius": "6px",
-                "msBoxShadow": "inset 0 0 0 1px #fff",
                 "msTransform": "translate(-6px, -6px)",
                 "transform": "translate(-6px, -6px)",
                 "width": "12px",
@@ -164,8 +160,59 @@ exports[`Chrome renders correctly 1`] = `
       }
     >
       <div
+        className="eyedropper-wrap"
         style={
           Object {
+            "WebkitJustifyContent": "flex-start",
+            "alignItems": "center",
+            "cursor": "pointer",
+            "display": "flex",
+            "height": "32px",
+            "justifyContent": "flex-start",
+            "position": "relative",
+            "width": "32px",
+          }
+        }
+      >
+        <svg
+          style={
+            Object {
+              "fill": "#364364",
+              "height": "18px",
+              "width": "18px",
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-3.12 3.12-1.93-1.91-1.41 1.41 1.42 1.42L3 16.25V21h4.75l8.92-8.92 1.42 1.42 1.41-1.41-1.92-1.92 3.12-3.12c.4-.4.4-1.03.01-1.42zM6.92 19L5 17.08l8.06-8.06 1.92 1.92L6.92 19z"
+          />
+        </svg>
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "bottom": "0px",
+              "left": "0px",
+              "position": "absolute",
+              "right": "0px",
+              "top": "0px",
+              "zIndex": 2,
+            }
+          }
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "WebkitJustifyContent": "flex-start",
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "flex-start",
             "width": "32px",
           }
         }
@@ -178,7 +225,6 @@ exports[`Chrome renders correctly 1`] = `
               "WebkitBorderRadius": "8px",
               "borderRadius": "8px",
               "height": "16px",
-              "marginTop": "6px",
               "msBorderRadius": "8px",
               "overflow": "hidden",
               "position": "relative",
@@ -190,18 +236,13 @@ exports[`Chrome renders correctly 1`] = `
             style={
               Object {
                 "MozBorderRadius": "8px",
-                "MozBoxShadow": "inset 0 0 0 1px rgba(0,0,0,.1)",
                 "OBorderRadius": "8px",
-                "OBoxShadow": "inset 0 0 0 1px rgba(0,0,0,.1)",
                 "WebkitBorderRadius": "8px",
-                "WebkitBoxShadow": "inset 0 0 0 1px rgba(0,0,0,.1)",
                 "background": "rgba(34, 25, 77, 1)",
                 "borderRadius": "8px",
                 "bottom": "0px",
-                "boxShadow": "inset 0 0 0 1px rgba(0,0,0,.1)",
                 "left": "0px",
                 "msBorderRadius": "8px",
-                "msBoxShadow": "inset 0 0 0 1px rgba(0,0,0,.1)",
                 "position": "absolute",
                 "right": "0px",
                 "top": "0px",
@@ -442,7 +483,6 @@ exports[`Chrome renders correctly 1`] = `
               style={
                 Object {
                   "height": "100%",
-                  "margin": "0 3px",
                   "position": "relative",
                 }
               }
@@ -795,19 +835,16 @@ exports[`ChromePointerCircle renders correctly 1`] = `
   style={
     Object {
       "MozBorderRadius": "6px",
-      "MozBoxShadow": "inset 0 0 0 1px #fff",
       "MozTransform": "translate(-6px, -6px)",
       "OBorderRadius": "6px",
-      "OBoxShadow": "inset 0 0 0 1px #fff",
       "OTransform": "translate(-6px, -6px)",
       "WebkitBorderRadius": "6px",
-      "WebkitBoxShadow": "inset 0 0 0 1px #fff",
       "WebkitTransform": "translate(-6px, -6px)",
+      "backgroundColor": "transparent",
+      "border": "1px solid #fff",
       "borderRadius": "6px",
-      "boxShadow": "inset 0 0 0 1px #fff",
       "height": "12px",
       "msBorderRadius": "6px",
-      "msBoxShadow": "inset 0 0 0 1px #fff",
       "msTransform": "translate(-6px, -6px)",
       "transform": "translate(-6px, -6px)",
       "width": "12px",

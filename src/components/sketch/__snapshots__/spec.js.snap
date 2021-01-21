@@ -367,7 +367,6 @@ exports[`Sketch renders correctly 1`] = `
             style={
               Object {
                 "height": "100%",
-                "margin": "0 3px",
                 "position": "relative",
               }
             }

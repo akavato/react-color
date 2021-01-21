@@ -34,39 +34,6 @@ class EyeDropper extends (PureComponent || Component) {
     return pixel
   }
 
-  imageToCanvas = (eventTarget) => {
-    // Usage example
-    // if (target.nodeName.toLowerCase() === 'img') {
-    //   const { offsetX, offsetY } = e
-    //   this.imageToCanvas(target).then((canvas) => {
-    //     const { r, g, b } = this.getCanvasPixelColor(canvas, offsetX, offsetY)
-    //     this.handleChange({ r, g, b })
-    //   })
-    //   this.removeEventListener()
-    //   document.body.style.cursor = 'default'
-    //   return
-    // }
-    if (eventTarget.nodeName !== 'IMG') {
-      return null
-    }
-    const canvasElement = document.createElement('canvas')
-    canvasElement.width = eventTarget.width
-    canvasElement.height = eventTarget.height
-    const context = canvasElement.getContext('2d')
-
-    const downloadedImg = new Image
-    downloadedImg.src = eventTarget.src
-    downloadedImg.crossOrigin = 'Anonymous'
-
-    return new Promise((resolve, reject) => {
-      downloadedImg.addEventListener('load', function loaded() {
-        context.drawImage(downloadedImg, 0, 0, eventTarget.width, eventTarget.height)
-        downloadedImg.removeEventListener('load', loaded)
-        resolve(canvasElement)
-      })
-    })
-  }
-
   eyeDropper = (e) => {
     e.stopPropagation()
     const { clientX, clientY } = e

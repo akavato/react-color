@@ -1,6 +1,6 @@
 {
   "name": "mp-react-color",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "react-color fork with eyedropper",
   "main": "lib/index.js",
   "module": "es/index.js",
