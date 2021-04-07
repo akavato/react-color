@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import reactCSS from 'reactcss'
-import map from 'lodash/map'
 import merge from 'lodash/merge'
 
 import { ColorWrap } from '../common'
@@ -25,7 +24,7 @@ export const Circle = ({ width, onChange, onSwatchHover, colors, hex, circleSize
 
   return (
     <div style={ styles.card } className={ `circle-picker ${ className }` }>
-      { map(colors, (c) => (
+      { colors.map((c) => (
         <CircleSwatch
           key={ c }
           color={ c }

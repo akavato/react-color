@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import reactCSS from 'reactcss'
-import map from 'lodash/map'
 import merge from 'lodash/merge'
 
 import { ColorWrap } from '../common'
@@ -99,7 +98,7 @@ export const Github = ({ width, colors, onChange, onSwatchHover, triangle,
     <div style={ styles.card } className={ `github-picker ${ className }` }>
       <div style={ styles.triangleShadow } />
       <div style={ styles.triangle } />
-      { map(colors, c => (
+      { colors.map((c) => (
         <GithubSwatch
           color={ c }
           key={ c }

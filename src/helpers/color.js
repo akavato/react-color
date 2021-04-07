@@ -1,11 +1,10 @@
-import each from 'lodash/each'
 import tinycolor from 'tinycolor2'
 
 export const simpleCheckForValidColor = (data) => {
   const keysToCheck = ['r', 'g', 'b', 'a', 'h', 's', 'l', 'v']
   let checked = 0
   let passed = 0
-  each(keysToCheck, (letter) => {
+  keysToCheck.forEach((letter) => {
     if (data[letter]) {
       checked += 1
       if (!isNaN(data[letter])) {

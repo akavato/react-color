@@ -3,7 +3,6 @@
 import React from 'react'
 import reactCSS from 'reactcss'
 import * as color from '../../helpers/color'
-import isUndefined from 'lodash/isUndefined'
 
 import { EditableInput } from '../common'
 import UnfoldMoreHorizontalIcon from './UnfoldMoreHorizontalIcon'
@@ -72,7 +71,7 @@ export class ChromeFields extends React.Component {
         source: 'rgb',
       }, e)
     } else if (data.h || data.s || data.l) {
-      // Remove any occurances of '%'.
+      // Remove any occurrences of '%'.
       if (typeof(data.s) === 'string' && data.s.includes('%')) { data.s = data.s.replace('%', '') }
       if (typeof(data.l) === 'string' && data.l.includes('%')) { data.l = data.l.replace('%', '') }
 
@@ -85,8 +84,8 @@ export class ChromeFields extends React.Component {
 
       this.props.onChange({
         h: data.h || this.props.hsl.h,
-        s: Number(!isUndefined(data.s) ? data.s : this.props.hsl.s),
-        l: Number(!isUndefined(data.l) ? data.l : this.props.hsl.l),
+        s: Number(data.s === undefined ? this.props.hsl.s : data.s),
+        l: Number(data.l === undefined ? this.props.hsl.l : data.l),
         source: 'hsl',
       }, e)
     }

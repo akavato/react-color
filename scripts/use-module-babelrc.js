@@ -17,13 +17,6 @@ const esBabelRC = {
     ['transform-runtime', {
       'regenerator': true,
     }],
-    [
-      'transform-rename-import',
-      {
-        'original': 'lodash',
-        'replacement': 'lodash-es',
-      },
-    ],
     ['transform-react-remove-prop-types', {
       'removeImport': true,
     }],
