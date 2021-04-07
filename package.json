@@ -1,6 +1,6 @@
 {
   "name": "mp-react-color",
-  "version": "3.0.2",
+  "version": "3.1.1",
   "description": "react-color fork with eyedropper",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -43,7 +43,6 @@
     "eyedropper"
   ],
   "dependencies": {
-    "dom-to-image-more": "^2.8.0",
     "html-to-image": "^1.6.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
