@@ -18,7 +18,7 @@ export const Chrome = ({ width, onChange, disableAlpha, rgb, hsl, hsv, hex, rend
         width,
         background: '#fff',
         borderRadius: '2px',
-        boxShadow: '0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)',
+        boxShadow: '0 0 2px rgba(0,0,0,.3), 0 2px 4px rgba(0,0,0,.3)',
         boxSizing: 'initial',
       },
       saturation: {

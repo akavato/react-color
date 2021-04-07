@@ -1,6 +1,6 @@
 import React, { Component, PureComponent } from 'react'
 import reactCSS from 'reactcss'
-import html2canvas from 'html2canvas'
+import { toCanvas } from 'html-to-image'
 import tinycolor from 'tinycolor2'
 
 class EyeDropper extends (PureComponent || Component) {
@@ -52,10 +52,10 @@ class EyeDropper extends (PureComponent || Component) {
     if (this.props.useScreenCaptureAPI) {
       canvas = await this.screenCapture()
       if (typeof canvas === 'string') {
-        canvas = await html2canvas(rootElement, { logging: false })
+        canvas = await toCanvas(rootElement)
       }
     } else {
-      canvas = await html2canvas(rootElement, { logging: false })
+      canvas = await toCanvas(rootElement)
     }
     canvas.id = 'temp-canvas'
     rootElement.insertBefore(canvas, rootElement.firstChild)
